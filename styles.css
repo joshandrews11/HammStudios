@@ -1,0 +1,73 @@
+/* includes styling for header, footer, 
+primary colors & fonts s*/
+@import url("main.css");
+
+.header-bg-img {
+  height: 95vh;
+  width: 100vw;
+  position: relative;
+  /*starting image for image chaning BG*/
+  background-image: url("images/hamm_18.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation-name: bg-change;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes bg-change {
+  0% {
+    background-image: url("images/hamm_18.jpg");
+  }
+  35% {
+    background-image: url("images/hamm_hat.jpg");
+  }
+  70% {
+    background-image: url("images/hamm_19.jpg");
+  }
+}
+
+/*overlay b/c a linear-gradient on the 
+background images itself gets rid of the smooth 
+transition from the keyframes*/
+.header-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*stacks header tags on top of each other*/
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+/*logo in middle of header image*/
+.header-overlay img {
+  width: 500px;
+  height: auto;
+  margin: -80px;
+}
+
+/*makes buttons identitcal no matter text inside of them*/
+.cta-box button {
+  background: rgba(0, 0, 0, 0.1);
+  width: 160px;
+  height: 40px;
+  margin: 20px 5px;
+  border: 1px solid white;
+  transition: ease-out 0.3s;
+  text-transform: uppercase;
+  color: white;
+  outline: none;
+}
+
+.cta-box button:hover {
+  box-shadow: inset 160px 0 0 0 var(--primary-color);
+  color: black;
+  cursor: pointer;
+}

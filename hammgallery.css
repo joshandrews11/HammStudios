@@ -1,0 +1,119 @@
+
+
+/* includes styling for header, footer, 
+primary colors & fonts s*/
+@import url("main.css");
+
+/*center heading for all collections*/
+.collections-container {
+    text-align: center;
+    padding-top: 25px;
+  }
+  
+  .collections-container h2 {
+    padding-bottom: 25px;
+    font-size: 2.8rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  
+  /*image grid gallery*/
+  .first-collection-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*gives height to each grid item w/o disrupting flow like it would if
+    you gave ther grid-container divs a fixed height*/
+    grid-auto-rows: 260px;
+    grid-gap: 5px;
+    width: 100%;
+    height: auto;
+    padding: 50px 10px 10px 10px;
+  }
+  
+  .first-collection-container div:nth-of-type(1) {
+    grid-column: 1 / 3;
+  }
+  
+  .first-collection-container div:nth-of-type(2) {
+    grid-column: 3 /5;
+    grid-row: 1 / 3;
+  }
+  
+  .first-collection-container div:nth-of-type(4) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+  }
+  
+  .first-collection-container div:nth-of-type(10) {
+    grid-column: 3 / 5;
+  }
+  
+  /*collection description container*/
+  .description-box {
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid var(--primary-color);
+    border-top: 3px solid var(--primary-color);
+    margin: 25px;
+  }
+  
+  .description-box h3 {
+    padding-bottom: 5px;
+    font-size: 2rem;
+  }
+  
+  .description-box p {
+    color: grey;
+  }
+  
+  .grid-item {
+    transition: filter 0.3s;
+  }
+  
+  /*makes items fit into grid boxes*/
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .grid-item:hover {
+    filter: brightness(60%); /*dark image on hover*/
+  }
+  
+  .bg-logo {
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("images/hamm_6.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .second-collection-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*gives height to each grid item w/o disrupting flow like it would if
+    you gave ther grid-container divs a fixed height*/
+    grid-auto-rows: 300px;
+    grid-gap: 5px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+  
+  .second-collection-container div:nth-of-type(1) {
+    grid-column: 2 / 4;
+  }
+  
+  .second-collection-container div:nth-of-type(2) {
+    grid-row: 1 / 3;
+  }
+  
+  @media (max-width: 650px) {
+    .first-collection-container,
+    .second-collection-container {
+      display: block;
+  }
